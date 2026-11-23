@@ -90,3 +90,12 @@ form.addEventListener('submit', async (e) => {
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Logo links scroll back to the top of the page
+document.querySelectorAll('a[href="#top"]').forEach((link) =>
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.replaceState(null, '', location.pathname + location.search);
+  })
+);
