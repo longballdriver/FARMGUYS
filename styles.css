@@ -201,7 +201,7 @@ a { color: var(--green-700); }
 .step p { color: var(--muted); }
 
 /* Audiences */
-.audiences { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.audiences { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 640px; }
 .audience { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 2.2rem; }
 .checks { list-style: none; padding: 0; margin: 0; }
 .checks li { position: relative; padding-left: 2rem; margin-bottom: 0.85rem; }
