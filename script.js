@@ -23,7 +23,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 // Fade-in on scroll
-const revealTargets = document.querySelectorAll('.pillar, .service, .step, .audience, .section-head, .two-col > *');
+const revealTargets = document.querySelectorAll('.pillar, .service, .step, .audience, .value, .section-head, .two-col > *, .about-grid > *');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
     (entries) => {
