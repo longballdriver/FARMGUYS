@@ -20,7 +20,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
   margin: 0;
@@ -89,7 +89,7 @@ a { color: var(--green-700); }
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .site-header.scrolled { border-color: var(--cream-dark); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
 .logo {
   display: inline-flex;
   align-items: center;
@@ -101,6 +101,12 @@ a { color: var(--green-700); }
   text-decoration: none;
 }
 .logo svg { width: 30px; height: 30px; color: var(--green-500); }
+.logo-header { gap: 0.7rem; }
+.logo-header svg { width: 42px; height: 42px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+.logo-name { font-size: 2.1rem; }
+.logo-tag { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); margin-top: 0.35rem; }
+@media (max-width: 400px) { .logo-name { font-size: 1.7rem; } .logo-tag { font-size: 0.62rem; } }
 .logo-light { color: var(--white); }
 .logo-light svg { color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: 1.75rem; }
@@ -266,7 +272,7 @@ a { color: var(--green-700); }
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute;
-    top: 72px; left: 0; right: 0;
+    top: 92px; left: 0; right: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -293,7 +299,7 @@ a { color: var(--green-700); }
 .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start; }
 .about-story p { font-size: 1.08rem; }
 .about-story em { color: var(--green-900); }
-.about-side { position: sticky; top: 100px; display: grid; gap: 1.5rem; }
+.about-side { position: sticky; top: 120px; display: grid; gap: 1.5rem; }
 .founders { background: var(--green-900); color: #e8efe6; border-radius: var(--radius); padding: 1.75rem; }
 .founders-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 1.1rem; }
 .founder-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
