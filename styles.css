@@ -294,11 +294,14 @@ a { color: var(--green-700); }
 .about-story p { font-size: 1.08rem; }
 .about-story em { color: var(--green-900); }
 .about-side { position: sticky; top: 100px; display: grid; gap: 1.5rem; }
-.about-facts { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--green-900); border-radius: var(--radius); padding: 1.75rem 1rem; text-align: center; }
-.fact { display: flex; flex-direction: column; gap: 0.2rem; }
-.fact + .fact { border-left: 1px solid rgba(255,255,255,0.15); }
-.fact-big { font-family: var(--serif); font-weight: 700; font-size: 2.2rem; line-height: 1; color: var(--gold); }
-.fact-label { font-size: 0.82rem; color: #cfdacb; text-transform: uppercase; letter-spacing: 0.08em; }
+.founders { background: var(--green-900); color: #e8efe6; border-radius: var(--radius); padding: 1.75rem; }
+.founders-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 1.1rem; }
+.founder-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.founder { display: flex; align-items: center; gap: 0.9rem; }
+.founder strong { display: block; color: var(--white); font-weight: 600; }
+.founder-role { display: block; font-size: 0.88rem; color: #b9c6b6; }
+.founder-initials { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: var(--green-900); font-family: var(--serif); font-weight: 700; }
+.founders-base { margin: 1.3rem 0 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.92rem; color: #cfdacb; }
 .about-quote { margin: 0; background: var(--cream); border-left: 5px solid var(--clay); border-radius: var(--radius); padding: 1.75rem; }
 .about-quote p { font-family: var(--serif); font-size: 1.3rem; line-height: 1.4; color: var(--green-900); margin-bottom: 0.8rem; }
 .about-quote cite { font-style: normal; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
