@@ -43,12 +43,14 @@ if ('IntersectionObserver' in window) {
 }
 
 // Contact form
-// NOTE: There is no backend yet. Set FORM_ENDPOINT to a form service URL
-// (e.g. Formspree, Netlify Forms, Basin) to start receiving submissions.
-const FORM_ENDPOINT = '';
+// Messages are delivered to the FarmGuys Gmail through FormSubmit (formsubmit.co).
+// The first message sent triggers a one-time activation email to that inbox.
+const CONTACT_EMAIL = 'farmguysmarketing@gmail.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -68,23 +70,31 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  if (FORM_ENDPOINT) {
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
-      if (!res.ok) throw new Error('Request failed');
-    } catch {
-      statusEl.textContent = 'Something went wrong. Please try again shortly.';
-      statusEl.classList.add('error');
-      return;
-    }
+  const data = Object.fromEntries(new FormData(form));
+  data._subject = `New website message from ${data.name}${data.farm ? ` (${data.farm})` : ''}`;
+  data._template = 'table';
+  data._replyto = data.email;
+
+  submitBtn.disabled = true;
+  statusEl.textContent = 'Sending...';
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const result = await res.json().catch(() => ({}));
+    if (!res.ok || String(result.success) === 'false') throw new Error('Request failed');
+  } catch {
+    statusEl.innerHTML = `Sorry, your message didn't go through. Please email us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+    statusEl.classList.add('error');
+    submitBtn.disabled = false;
+    return;
   }
 
+  submitBtn.disabled = false;
   form.reset();
-  statusEl.textContent = "Thanks! We'll be in touch soon to talk about growing your farm.";
+  statusEl.textContent = "Thanks! We got your message and will be in touch soon.";
   statusEl.classList.add('success');
 });
 

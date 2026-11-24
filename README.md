@@ -11,7 +11,7 @@ A static, single-page site for FarmGuys, which connects local farms with health-
 Open `index.html` in a browser. No build step is needed.
 
 ## Contact form
-The form validates input but doesn't send anything yet. To receive submissions, set `FORM_ENDPOINT` in `script.js` to a form service URL (Formspree, Netlify Forms, Basin, etc.).
+Messages go to farmguysmarketing@gmail.com through FormSubmit (formsubmit.co). The first message sent triggers a one-time activation email to that inbox; click the link in it to start receiving messages. The address is set as `CONTACT_EMAIL` in `script.js`.
 
 ## Deploy
 Works on any static host: GitHub Pages, Netlify, Vercel, or Cloudflare Pages.

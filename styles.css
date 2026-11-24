@@ -331,3 +331,11 @@ a { color: var(--green-700); }
 .contact-survey { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--cream-dark); }
 .contact-survey p { color: var(--muted); }
 .contact-survey strong { color: var(--green-900); }
+
+/* Contact email + spam honeypot */
+.contact-email { margin-top: 1.5rem; color: var(--muted); }
+.contact-email a { font-weight: 600; }
+.footer-email { color: #dfe8dc; }
+.footer-email:hover { color: var(--gold); }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.btn:disabled { opacity: 0.6; cursor: wait; }
