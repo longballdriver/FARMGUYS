@@ -146,6 +146,7 @@ a { color: var(--green-700); }
 .section-tint { background: var(--green-100); }
 .section-dark { background: var(--green-900); color: #e8efe6; }
 .section-dark h2, .section-dark h3 { color: var(--white); }
+.section-dark .lead { color: #cfdacb; }
 .section-head { max-width: 680px; margin-bottom: 3rem; }
 .two-col { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
 .prose p { color: var(--muted); }
@@ -209,6 +210,8 @@ a { color: var(--green-700); }
 /* Audiences */
 .audiences { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .audience { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 2.2rem; }
+.audience h3 { padding-bottom: 1rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.audience .checks li:last-child { margin-bottom: 0; }
 .checks { list-style: none; padding: 0; margin: 0; }
 .checks li { position: relative; padding-left: 2rem; margin-bottom: 0.85rem; }
 .checks li::before {
@@ -323,4 +326,3 @@ a { color: var(--green-700); }
 @media (max-width: 560px) {
   .values { grid-template-columns: 1fr; }
 }
-.audience-intro { color: #cfdacb; margin-bottom: 1.3rem; }
